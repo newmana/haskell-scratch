@@ -1,3 +1,7 @@
+--
+-- Working example of http://en.wikibooks.org/wiki/Haskell/Monad_transformers
+--
+
 import Control.Monad
 import Control.Monad.Trans.Maybe
 import Control.Monad.Trans.Class

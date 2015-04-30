@@ -1,3 +1,5 @@
+-- http://blog.ssanj.net/posts/2014-06-07-trying-to-wrap-a-function-with-a-datatype.html
+
 {-# LANGUAGE FunctionalDependencies #-}
 {-# LANGUAGE MultiParamTypeClasses #-}
 {-# LANGUAGE FlexibleInstances #-}
