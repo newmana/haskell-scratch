@@ -1,22 +1,23 @@
 --
 -- Working example of http://en.wikibooks.org/wiki/Haskell/Monad_transformers
---
+-- can replace lift with lifeIO
 
 import Control.Monad
 import Control.Monad.Trans.Maybe
 import Control.Monad.Trans.Class
+import Control.Monad.Trans (liftIO)
 
 getValidPassphrase :: MaybeT IO String
 getValidPassphrase = do 
-    s <- lift getLine
+    s <- liftIO getLine
     guard (isValid s)
     return s
  
 askPassphrase :: MaybeT IO ()
 askPassphrase = do 
-    lift $ putStrLn "Insert your new passphrase:"
+    liftIO $ putStrLn "Insert your new passphrase:"
     value <- getValidPassphrase
-    lift $ putStrLn "Storing in database..."
+    liftIO $ putStrLn "Storing in database..."
 
 getPassphrase :: IO (Maybe String)
 getPassphrase = do 
