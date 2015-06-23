@@ -15,7 +15,7 @@ askPassphrase :: MaybeT IO ()
 askPassphrase = do 
     liftIO $ putStrLn "Insert your new passphrase:"
     value <- getValidPassphrase
-    liftIO $ putStrLn "Storing in database..."
+    liftIO $ putStrLn ("Storing in database..." ++ value)
 
 getValidPassphrase :: MaybeT IO String
 getValidPassphrase = do 
