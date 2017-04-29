@@ -16,5 +16,5 @@ deleteIndices indices elems =
       go (i:is) es = go (fmap pred is) (Data.Sequence.deleteAt i es)
    in go sorted elems
 
-deleteIndices' :: (Traversable t, Foldable t) => t Int -> Seq b -> Seq b
-deleteIndices' e l = seqOf folded $ l ^.. traversed . indices (`notElem` e)
+deleteIndices' :: (Foldable t) => t Int -> Seq b -> Seq b
+deleteIndices' e = ifoldr (\i a b -> if i `notElem` e then a Data.Sequence.<| b else b) Data.Sequence.empty
