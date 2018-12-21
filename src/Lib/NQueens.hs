@@ -4,6 +4,8 @@
 {-# LANGUAGE MultiParamTypeClasses  #-}
 {-# LANGUAGE UndecidableInstances   #-}
 
+module Lib.NQueens where
+
 nil = undefined
 
 data Nil

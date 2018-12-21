@@ -4,6 +4,8 @@
 -- For data Compare a where
 {-# LANGUAGE GADTs                     #-}
 
+module Lib.Exist where
+
 data T = forall a. MkT a
 
 mkT :: a -> T
@@ -24,7 +26,7 @@ xs :: [Obj]
 xs = [Obj 1, Obj "foo", Obj 'c']
 
 doShow :: [Obj] -> String
-doShow [] = ""
+doShow []           = ""
 doShow (Obj x : xs) = show x ++ doShow xs
 
 data Compare a where

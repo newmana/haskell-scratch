@@ -1,6 +1,8 @@
+module Lib.MaybeEither where
+
 justA = Just "a"
-Just (a) = justA
-Just (b) = Nothing
+Just a = justA
+Just b = Nothing
 maybeToA = maybe "" id justA
 isA = a == "a"
 isAToo = maybeToA == "a"

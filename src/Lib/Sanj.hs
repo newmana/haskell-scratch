@@ -1,8 +1,10 @@
 -- http://blog.ssanj.net/posts/2014-06-07-trying-to-wrap-a-function-with-a-datatype.html
 
+{-# LANGUAGE FlexibleInstances      #-}
 {-# LANGUAGE FunctionalDependencies #-}
-{-# LANGUAGE MultiParamTypeClasses #-}
-{-# LANGUAGE FlexibleInstances #-}
+{-# LANGUAGE MultiParamTypeClasses  #-}
+
+module Lib.Sanj where
 
 class BuildList a r  | r-> a where
 	build' :: [a] -> a -> r
@@ -16,12 +18,12 @@ instance BuildList a r => BuildList a (a->r) where
 build x = build' [] x
 
 data TagInfo = TagInfo {
-                    fontMin :: Double,
-                    fontMax :: Double,
-                    tagName :: String,
-                    tagUrl  :: String,
-                    tagMax  :: Int,
-                    tagMin  :: Int,
+                    fontMin     :: Double,
+                    fontMax     :: Double,
+                    tagName     :: String,
+                    tagUrl      :: String,
+                    tagMax      :: Int,
+                    tagMin      :: Int,
                     maxUseCount :: Int
                } deriving (Show)
 
@@ -39,4 +41,4 @@ showTag :: TagInfo -> String
 showTag x = "hello"
 -- showTag (TagInfo a b c d e f g) = c ++ d
 -- showTag . TagInfo
--- renderTagCloudWith ((fmap . fmap . fmap . fmap . fmap . fmap . fmap) showTag TagInfo) 
+-- renderTagCloudWith ((fmap . fmap . fmap . fmap . fmap . fmap . fmap) showTag TagInfo)

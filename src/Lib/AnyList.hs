@@ -2,6 +2,8 @@
 
 {-# LANGUAGE ExistentialQuantification #-}
 
+module Lib.AnyList where
+
 data PyShow = forall a. (Show a) => PyShow a
 data PyShowNum = forall a. (Show a,Num a) => PyShowNum a
 

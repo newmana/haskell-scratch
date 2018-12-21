@@ -1,4 +1,7 @@
 {-# LANGUAGE UnicodeSyntax #-}
+
+module Lib.Contra where
+
 import           Control.Applicative
 import           Data.Functor.Contravariant (Contravariant (..))
 -- show

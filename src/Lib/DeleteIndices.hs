@@ -1,5 +1,7 @@
 {-# LANGUAGE FlexibleContexts #-}
 
+module Lib.DeleteIndices where
+
 import           Control.Lens
 import           Data.List
 import           Data.Sequence
@@ -12,7 +14,7 @@ import           Data.Sequence.Lens
 deleteIndices :: (Num a) => [Int] -> Seq a -> Seq a
 deleteIndices indices elems =
   let sorted = Data.List.sort indices
-      go [] es = es
+      go [] es     = es
       go (i:is) es = go (fmap pred is) (Data.Sequence.deleteAt i es)
    in go sorted elems
 
