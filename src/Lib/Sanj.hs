@@ -6,16 +6,17 @@
 
 module Lib.Sanj where
 
-class BuildList a r  | r-> a where
-	build' :: [a] -> a -> r
+class BuildList a r  | r -> a where
+  build' :: [a] -> a -> r
 
 instance BuildList a [a] where
-     build' l x = reverse$ x:l
+  build' l x = reverse$ x:l
 
 instance BuildList a r => BuildList a (a->r) where
-	build' l x y = build'(x:l) y
+  build' l x = build'(x:l)
 
-build x = build' [] x
+build :: BuildList a r => a -> r
+build = build' []
 
 data TagInfo = TagInfo {
                     fontMin     :: Double,
