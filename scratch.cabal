@@ -20,5 +20,4 @@ library
                      , lens
                      , mtl
                      , transformers
-                     , yeshql-postgresql-simple
   default-language:    Haskell2010
