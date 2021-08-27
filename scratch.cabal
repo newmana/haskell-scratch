@@ -12,6 +12,7 @@ library
                      , Lib.LiftIo
                      , Lib.MaybeEither
                      , Lib.NQueens
+                     , Lib.Planets
                      , Lib.Sanj
                      , Lib.Yeshql
   build-depends:       base >= 4.8 && < 5

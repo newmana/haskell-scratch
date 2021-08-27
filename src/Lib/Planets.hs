@@ -1,4 +1,4 @@
-module Lib.AnyList where
+module Lib.Planets where
 
 import Control.Monad
 import System.Environment   
@@ -22,7 +22,7 @@ g :: Double
 g = 6.67300E-11
 
 calculateSurfaceGravity :: PlanetStat -> Double
-calculateSurfaceGravity (PlanetsCalc _ mass radius) = (g * mass) / radius
+calculateSurfaceGravity (PlanetStat _ mass radius) = (g * mass) / radius
 
 surfaceWeight :: Double -> PlanetStat -> Double
 surfaceWeight otherMass p = otherMass * calculateSurfaceGravity p
