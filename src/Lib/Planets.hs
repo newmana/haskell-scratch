@@ -39,5 +39,5 @@ main = do
     let usage = "Usage: planets <earth_weight>"
     case args of
         [first] -> printOutAllWeights (read first :: Double)
-        _ -> error $ "Wrong number of arguments: : " <> show args <> "\n" <> usage
+        _ -> error $ "Wrong number of arguments: " <> show args <> "\n" <> usage
 
