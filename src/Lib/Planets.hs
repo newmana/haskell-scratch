@@ -22,7 +22,7 @@ g :: Double
 g = 6.67300E-11
 
 calculateSurfaceGravity :: PlanetStat -> Double
-calculateSurfaceGravity (PlanetStat _ mass radius) = (g * mass) / radius
+calculateSurfaceGravity (PlanetStat _ mass radius) = (g * mass) / (radius * radius)
 
 surfaceWeight :: Double -> PlanetStat -> Double
 surfaceWeight otherMass p = otherMass * calculateSurfaceGravity p
