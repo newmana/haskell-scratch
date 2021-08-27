@@ -6,7 +6,7 @@ import System.Environment
 
 data Planet = Mercury | Venus | Earth | Mars | Jupiter | Saturn | Uranus | Neptune | Pluto deriving (Enum, Show, Eq)
 
-data PlanetStat = PlanetStat Planet Double Double
+data PlanetStat = PlanetStat { planet :: Planet, mass :: Double, radius :: Double }
 
 stat :: Planet -> PlanetStat
 stat Mercury = PlanetStat Mercury 3.303e+23 2.4397e6
@@ -23,7 +23,7 @@ g :: Double
 g = 6.67300E-11
 
 calculateSurfaceGravity :: PlanetStat -> Double
-calculateSurfaceGravity (PlanetStat _ mass radius) = (g * mass) / (radius * radius)
+calculateSurfaceGravity p = (g * mass p) / (radius p * radius p)
 
 surfaceWeight :: Double -> PlanetStat -> Double
 surfaceWeight otherMass p = otherMass * calculateSurfaceGravity p
