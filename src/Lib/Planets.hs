@@ -1,3 +1,4 @@
+-- https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html
 module Lib.Planets where
 
 import Control.Monad
