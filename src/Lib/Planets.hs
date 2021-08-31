@@ -9,14 +9,14 @@ data Planet = Mercury | Venus | Earth | Mars | Jupiter | Saturn | Uranus | Neptu
 data PlanetStat = PlanetStat { planet :: Planet, mass :: Double, radius :: Double }
 
 stat :: Planet -> PlanetStat
-stat Mercury = PlanetStat { planet = Mercury, mass = 3.301e+23, radius = 2.4394e6 }
-stat Venus   = PlanetStat { planet = Venus,   mass = 4.867e+24, radius = 6.052e6  }
-stat Earth   = PlanetStat { planet = Earth,   mass = 5.972e+24, radius = 6.3710e6 }
-stat Mars    = PlanetStat { planet = Mars,    mass = 6.417e+23, radius = 3.3895e6 }
-stat Jupiter = PlanetStat { planet = Jupiter, mass = 1.898e+27, radius = 6.9911e7 }
-stat Saturn  = PlanetStat { planet = Saturn,  mass = 5.685e+26, radius = 5.8232e7 }
-stat Uranus  = PlanetStat { planet = Uranus,  mass = 8.682e+25, radius = 2.362e7  }
-stat Neptune = PlanetStat { planet = Neptune, mass = 1.024e+26, radius = 2.4622e7 }
+stat p@Mercury = PlanetStat { planet = p, mass = 3.301e+23, radius = 2.4394e6 }
+stat p@Venus   = PlanetStat { planet = p, mass = 4.867e+24, radius = 6.052e6  }
+stat p@Earth   = PlanetStat { planet = p, mass = 5.972e+24, radius = 6.3710e6 }
+stat p@Mars    = PlanetStat { planet = p, mass = 6.417e+23, radius = 3.3895e6 }
+stat p@Jupiter = PlanetStat { planet = p, mass = 1.898e+27, radius = 6.9911e7 }
+stat p@Saturn  = PlanetStat { planet = p, mass = 5.685e+26, radius = 5.8232e7 }
+stat p@Uranus  = PlanetStat { planet = p, mass = 8.682e+25, radius = 2.362e7  }
+stat p@Neptune = PlanetStat { planet = p, mass = 1.024e+26, radius = 2.4622e7 }
 
 g :: Double
 g = 6.67300E-11
