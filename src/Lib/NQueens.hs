@@ -1,7 +1,6 @@
 {-# OPTIONS_GHC -fno-warn-missing-methods #-}
 {-# LANGUAGE FlexibleInstances      #-}
 {-# LANGUAGE FunctionalDependencies #-}
-{-# LANGUAGE MultiParamTypeClasses  #-}
 {-# LANGUAGE UndecidableInstances   #-}
 
 module Lib.NQueens where
@@ -64,8 +63,7 @@ class PeanoEqual a b t | a b -> t
 instance PeanoEqual Z     Z     True
 instance PeanoEqual (S a) Z     False
 instance PeanoEqual Z     (S b) False
-instance (PeanoEqual a b t)
-  => PeanoEqual (S a) (S b) t
+instance (PeanoEqual a b t) => PeanoEqual (S a) (S b) t
 
 -- Comparison (<)
 class PeanoLT a b t | a b -> t

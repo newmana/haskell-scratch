@@ -1,0 +1,34 @@
+# Haskell build files
+*.a
+*.o
+*.hi
+
+# files we just genreally ont want in the repo
+*.swp
+*.log
+
+# Python compiled bytecode
+*.pyc
+
+# potential build files:
+cabal-dev/
+.cabal-sandbox/
+*.buildinfo
+cabal.sandbox.config
+
+#cabal build directory:
+dist/
+
+*.tag
+*~
+*_flymake.hs
+.hsenv
+.stack-work/
+.stack-root/
+/.cabal-sandbox/
+TAGS
+tags
+/_release/
+.vagrant/
+*.tix
+.DS_Store
