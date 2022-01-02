@@ -12,6 +12,7 @@ library
                      , Lib.LiftIo
                      , Lib.MaybeEither
                      , Lib.NQueens
+                     , Lib.Planets
                      , Lib.Sanj
                      , Lib.Smawk
   build-depends:       base >= 4.9 && < 5
